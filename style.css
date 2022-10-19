@@ -68,6 +68,35 @@ header {
     flex-direction: row;
     justify-content: space-between;
   }
+
+  body {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;  
+    grid-template-areas: 
+     "header header  header"
+     "menu   content ad"
+     "footer footer footer";
+  }
+
+  header {
+    grid-area: header;
+  }
+  
+  nav {
+    grid-area: menu;
+  }
+  
+  article {
+    grid-area: content;
+  }
+  
+  aside {
+    grid-area: ad;
+  }
+  
+  footer {
+    grid-area: footer;
+  }  
 }
 
 @media print {
