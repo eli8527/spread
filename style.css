@@ -4,6 +4,8 @@
 
   --main-heading: calc(var(--body-copy) * 3);
   --sub-heading: calc(var(--body-copy) * 1.5);
+
+  --brand-color: gold;
 }
 
 @media (min-width: 768px) {
@@ -13,6 +15,22 @@
 
     --main-heading: calc(var(--body-copy) * 4);
     --sub-heading: calc(var(--body-copy) * 2);  
+  }
+}
+
+@media print {
+  @page {
+    margin: 0;
+  }
+
+  :root {
+    --body-copy: 12pt;
+    --page-spacing: 0.25in;
+
+    --main-heading: calc(var(--body-copy) * 5);
+    --sub-heading: calc(var(--body-copy) * 3);  
+
+    --brand-color: white;
   }
 }
 
@@ -36,7 +54,7 @@ h2 {
 
 header,
 footer {
-  background-color: gold;
+  background-color: var(--brand-color);
 }
 
 header {
@@ -49,5 +67,11 @@ header {
   header {
     flex-direction: row;
     justify-content: space-between;
+  }
+}
+
+@media print {
+  header {
+    border-bottom: 2px solid black;
   }
 }
